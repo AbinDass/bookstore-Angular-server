@@ -7,13 +7,13 @@ import userRouter from "./routes/userRoutes.js";
 dotenv.config({ path: "./.env" });
 app.use(express.urlencoded({ extended: true }));
 
-const corsOptions = {
-    origin: "https://64ccccbfda73a576c56af3ef--bespoke-axolotl-ce82bc.netlify.app/",
-    methods: "GET, POST, PUT, PATCH, DELETE",
-    allowedHeaders: "Content-Type, Authorization",
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-app.use(cors(corsOptions), json());
+// const corsOptions = {
+//     origin: "https://64ccccbfda73a576c56af3ef--bespoke-axolotl-ce82bc.netlify.app/",
+//     methods: "GET, POST, PUT, PATCH, DELETE",
+//     allowedHeaders: "Content-Type, Authorization",
+//     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
+app.use(cors(), json());
 
 const DB = process.env.DATABASE;
 mongoose
